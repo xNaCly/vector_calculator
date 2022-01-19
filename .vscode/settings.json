@@ -3,6 +3,8 @@
 		"string.h": "c",
 		"curl.h": "c",
 		"stdio.h": "c",
-		"cstdlib": "c"
+		"cstdlib": "c",
+		"vector.h": "c",
+		"test.h": "c"
 	}
 }

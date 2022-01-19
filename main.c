@@ -1,18 +1,10 @@
-#include <math.h>
-#include "util.h"
-
-double vec_length(double vec[]){
-  double s;
-  for(int i = 0; i < 3; i++){
-    s += pow(vec[i], 2);
-  }
-  return sqrt(s);
-}
+#include "libs/util.h"
+#include "libs/vector.h"
 
 int main(void){
-  print_options();
-  int selection = get_selection();
-  print_help();
+  // print_options();
+  // get_selection();
+  // print_help();
 
   return 0;
 }

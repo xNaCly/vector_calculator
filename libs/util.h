@@ -9,7 +9,7 @@
 const char *OPTIONS[] = {"vec_length(vec)"};
 
 void throw_error(char text[], int code){
-  printf("\n\nError [%d]: %s\n", code, text);
+  printf("\n\nError (%d): %s\n", code, text);
   printf("Stopping the programm...");
   exit(1);
 }
