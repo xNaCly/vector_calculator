@@ -2,14 +2,15 @@
 #define TEST_H_INCLUDED
 
 #include <stdio.h>
+#include <string.h>
 #include "util.h"
 
 void int_test_feedback(double x, double y, char text[], char status[]){
-  printf("[%s] %s \n\tExpected: %f\n\tGot: %f\n", status, text, x, y);
+  printf("[%s%s%s] %s \n\tExpected: %f\n\tGot: %f\n", strcmp(status, "Passed") ? ANSI_COLOR_RED : ANSI_COLOR_GREEN, status, ANSI_COLOR_RESET, text, x, y);
 }
 
 void vec_test_feedback(double vec[], double vec1[], char text[], char status[]){
-  printf("[%s] %s \n\tExpected: {%f, %f, %f}\n\tGot: {%f, %f, %f}\n", status, text, vec[0], vec[1], vec[2], vec1[0], vec1[1], vec1[2]);
+  printf("[%s%s%s] %s \n\tExpected: {%f, %f, %f}\n\tGot: {%f, %f, %f}\n", strcmp(status, "Passed") ? ANSI_COLOR_RED : ANSI_COLOR_GREEN, status, ANSI_COLOR_RESET, text, vec[0], vec[1], vec[2], vec1[0], vec1[1], vec1[2]);
 }
 
 void check_if_pass_int(double value1, double value2, char text[]){
@@ -25,6 +26,7 @@ void check_if_pass_vec(double vec[], double vec1[], char text[]){
     if(vec[i] == vec1[i] && (vec[i]-vec1[i]) < 0.01) {
       status = 1;
     } else
+      status = 0;
       break;
   }
   if(status == 1)

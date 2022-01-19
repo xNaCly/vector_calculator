@@ -5,11 +5,15 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[34m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
 // possible options for the user to select
 const char *OPTIONS[] = {"vec_length(vec)"};
 
 void throw_error(char text[], int code){
-  printf("\n\nError (%d): %s\n", code, text);
+  printf(ANSI_COLOR_RED "\n\nError (%d): %s\n" ANSI_COLOR_RESET, code, text);
   printf("Stopping the programm...");
   exit(1);
 }
