@@ -9,4 +9,4 @@ This program has several helpful methods for working with vectors:
 - subtract two vectors: vec_sub(vec, vec)
 - multiply a vector with an int: vec_mult(vec, int)
 
-source: https://github.com/xnacly/clang
+source: https://github.com/xnacly/vector_calculator
