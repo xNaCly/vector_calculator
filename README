@@ -1,4 +1,3 @@
-*****************************************************************
 Vector helper v0.1
 
 This program has several helpful methods for working with vectors:
@@ -11,4 +10,3 @@ This program has several helpful methods for working with vectors:
 - multiply a vector with an int: vec_mult(vec, int)
 
 source: https://github.com/xnacly
-******************************************************************
