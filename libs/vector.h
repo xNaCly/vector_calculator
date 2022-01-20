@@ -1,7 +1,6 @@
 #ifndef VECTOR_H_INCLUDED
 #define VECTOR_H_INCLUDED
 
-#include <stdio.h>
 #include <math.h>
 
 double vec_length(int vec[]){
