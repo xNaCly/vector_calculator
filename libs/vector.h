@@ -11,13 +11,18 @@ double vec_length(int vec[]){
   return sqrt(s);
 }
 
-void vec_add(int vec[], int vec1[], int v[]){
+void vec_add(int v1[], int v2[], int result_vector[]){
   for(int i = 0; i < 3; i++){
-    v[i] = vec[i] + vec1[i];
+    result_vector[i] = v1[i] + v2[i];
   }
   return;
 }
 
-
+void vec_mult(int v1[], int factor, int result_vector[]){
+  for(int i = 0; i < 3; i++){
+    result_vector[i] = v1[i] * factor;
+  }
+  return;
+}
 
 #endif
