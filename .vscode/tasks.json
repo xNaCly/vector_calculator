@@ -5,10 +5,10 @@
 			"label": "C/C++: gcc build active file",
 			"command": "/usr/bin/gcc",
 			"args": [
-				"-lm",
 				"-fdiagnostics-color=always",
 				"-g",
 				"${file}",
+				"-lm",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}.out"
 			],
