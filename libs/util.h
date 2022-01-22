@@ -14,8 +14,8 @@ const char *OPTIONS[] = {"vec_length(vec)"};
 
 void throw_error(char text[], int code){
   printf(ANSI_COLOR_RED "\n\nError (%d): %s\n" ANSI_COLOR_RESET, code, text);
-  printf("Stopping the programm...");
-  exit(1);
+  printf("Stopping the programm due to an Error. \n");
+  exit(code < 255 ? code : 1);
 }
 
 void print_options(void){

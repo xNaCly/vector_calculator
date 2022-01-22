@@ -25,4 +25,12 @@ void vec_mult(int v1[], int factor, int result_vector[]){
   return;
 }
 
+int scalar_prod(int v1[], int v2[]){
+  int s = 0;
+  for(int i = 0; i < 3; i++){
+    s += v1[i] * v2[i];
+  }
+  return s;
+}
+
 #endif
