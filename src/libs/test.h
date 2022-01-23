@@ -21,25 +21,26 @@ void vec_test_feedback(int vec[], int vec1[], char text[], char status[]){
 }
 
 void check_if_equal_double(double value1, double value2, char text[]){
-  if((value1-value2) < 0.1)
+  if((value1-value2) < 0.1){
     tests_passed++;
     return int_test_feedback(value1, value2, text, "Passed");
+  }
 
   tests_failed++;
   int_test_feedback(value1, value2, text, "Failed");
 }
 
 void check_if_equal_int(int value1, int value2, char text[]){
-  if(value1 == value2)
+  if(value1 == value2){
     tests_passed++;
     return int_test_feedback(value1, value2, text, "Passed");
+  }
 
   tests_failed++;
   int_test_feedback(value1, value2, text, "Failed");
 }
 
 void check_if_equal_vec(int vec[], int vec1[], char text[]){
-  int status = 0;
   for (int i = 0; i < 3; i++){
     if(vec[i] != vec1[i]) {
       tests_failed++;

@@ -32,6 +32,5 @@ int main(void){
   int sp = scalar_prod(vec, vec1);
   check_if_equal_int(12, sp, "Test 4.1");
 
-
   print_results();
 }
