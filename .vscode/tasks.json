@@ -10,7 +10,7 @@
 				"${file}",
 				"-lm",
 				"-o",
-				"build/${fileBasenameNoExtension}.out"
+				"../../build/${fileBasenameNoExtension}.out"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
