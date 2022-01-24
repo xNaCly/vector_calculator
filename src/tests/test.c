@@ -4,6 +4,7 @@
 #include <time.h>
 
 /* Function prototypes */
+/* test.h */
 void print_test_header(char*);
 void int_test_feedback(double, double, char*, char*);
 void vec_test_feedback(int*, int*, char*, char*);
@@ -11,6 +12,15 @@ void check_if_equal_double(double, double, char*);
 void check_if_equal_int(int, int, char*);
 void check_if_equal_vec(int*, int*, char*);
 void print_results(double);
+
+/* vector.h */
+double vec_length(int*);
+void vec_add(int*, int*, int*);
+void vec_sub(int*, int*, int*);
+void vec_mult(int*, int, int*);
+int scalar_prod(int*, int*);
+double angle_between(int*, int*);
+void vec_prod(int*, int*, int*);
 /* -------------------- */
 
 int main(int argc, char *argv[]){
