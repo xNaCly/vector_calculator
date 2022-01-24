@@ -1,9 +1,9 @@
-#ifndef TEST_H_INCLUDED
-#define TEST_H_INCLUDED
+#ifndef _TEST_H_INCLUDED
+#define _TEST_H_INCLUDED
 
 #include <stdio.h>
 #include <string.h>
-#include "util.h"
+#include "_util.h"
 
 int TESTS_PASSED = 0;
 int TESTS_FAILED = 0;

@@ -1,5 +1,5 @@
-#ifndef UTIL_H_INCLUDED
-#define UTIL_H_INCLUDED
+#ifndef _UTIL_H_INCLUDED
+#define _UTIL_H_INCLUDED
 
 #include <stdio.h>
 #include <string.h>

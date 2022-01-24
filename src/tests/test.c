@@ -1,5 +1,5 @@
-#include "../libs/vector.h"
-#include "../libs/test.h"
+#include "../libs/_vector.h"
+#include "../libs/_test.h"
 #include <string.h>
 #include <time.h>
 
@@ -86,4 +86,5 @@ int main(int argc, char *argv[]){
   clock_t end = clock();
   double time_elabsed = (double)(end - begin) / CLOCKS_PER_SEC;
   print_results(time_elabsed);
+  return 0;
 }

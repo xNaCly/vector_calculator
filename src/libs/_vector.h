@@ -1,5 +1,5 @@
-#ifndef VECTOR_H_INCLUDED
-#define VECTOR_H_INCLUDED
+#ifndef _VECTOR_H_INCLUDED
+#define _VECTOR_H_INCLUDED
 
 #define PI 3.14159265
 
