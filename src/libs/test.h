@@ -58,6 +58,6 @@ void check_if_equal_vec(int vec[], int vec1[], char text[]){
 }
 
 void print_results(double time_elabsed){
-    printf("\nTests: %s%d passed%s, %d of %d total\nTime: %.2f\n", ANSI_COLOR_GREEN_F, TESTS_PASSED, ANSI_COLOR_RESET, TESTS_PASSED, TESTS_PASSED+TESTS_PASSED, time_elabsed);
+    printf("\nTests: %s%d passed%s, %d of %d total\nTime: %.5fsec\n", ANSI_COLOR_GREEN_F, TESTS_PASSED, ANSI_COLOR_RESET, TESTS_PASSED, TESTS_PASSED+TESTS_FAILED, time_elabsed);
 }
 #endif

@@ -18,6 +18,13 @@ void vec_add(int v1[], int v2[], int result_vector[]){
   return;
 }
 
+void vec_sub(int v1[], int v2[], int result_vector[]){
+  for(int i = 0; i < 3; i++){
+    result_vector[i] = v1[i] - v2[i];
+  }
+  return;
+}
+
 void vec_mult(int v1[], int factor, int result_vector[]){
   for(int i = 0; i < 3; i++){
     result_vector[i] = v1[i] * factor;

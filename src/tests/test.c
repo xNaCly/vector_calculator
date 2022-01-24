@@ -1,10 +1,12 @@
 #include "../libs/vector.h"
 #include "../libs/test.h"
 #include <string.h>
+#include <time.h>
 
 
 int main(int argc, char *argv[]){
-  VERBOSE = argc > 1 ? strcmp("--verbose", argv[1]) || strcmp("-v", argv[1]) : 0;
+  clock_t begin = clock();
+  VERBOSE = argc > 1 ? !(strcmp("--silent", argv[1]) || strcmp("-s", argv[1])) : 1;
 
   if(VERBOSE)
     printf("Running tests...\n\n");
@@ -29,18 +31,29 @@ int main(int argc, char *argv[]){
   check_if_equal_vec(expected_v, result_v, "Test 2.0");
 
   if(VERBOSE)
-    print_test_header("Test 3 - Multiplication of a vector");
+    print_test_header("Test 3 - Subtraction of two vectors: ");
 
   int result_v1[] = {0,0,0};
-  int fac = 2;
-  int expected_v2[] = {2,4,6};
-  vec_mult(vec, fac, result_v1);
-  check_if_equal_vec(expected_v2, result_v1, "Test 3.1");
+  int expected_v1[] = {1,0,-1};
+
+  vec_sub(vec1, vec, result_v1);
+  check_if_equal_vec(expected_v1, result_v1, "Test 3.0");
 
   if(VERBOSE)
-    print_test_header("Test 4 - Calculate scalar product of two vectors");
-  int sp = scalar_prod(vec, vec1);
-  check_if_equal_int(12, sp, "Test 4.1");
+    print_test_header("Test 4 - Multiplication of a vector");
 
-  print_results(2);
+  int result_v2[] = {0,0,0};
+  int fac = 2;
+  int expected_v2[] = {2,4,6};
+  vec_mult(vec, fac, result_v2);
+  check_if_equal_vec(expected_v2, result_v2, "Test 4.0");
+
+  if(VERBOSE)
+    print_test_header("Test 5 - Calculate scalar product of two vectors");
+  int sp = scalar_prod(vec, vec1);
+  check_if_equal_int(12, sp, "Test 5.0");
+
+  clock_t end = clock();
+  double time_elabsed = (double)(end - begin) / CLOCKS_PER_SEC;
+  print_results(time_elabsed);
 }
