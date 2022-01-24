@@ -3,6 +3,15 @@
 #include <string.h>
 #include <time.h>
 
+/* Function prototypes */
+void print_test_header(char*);
+void int_test_feedback(double, double, char*, char*);
+void vec_test_feedback(int*, int*, char*, char*);
+void check_if_equal_double(double, double, char*);
+void check_if_equal_int(int, int, char*);
+void check_if_equal_vec(int*, int*, char*);
+void print_results(double);
+/* -------------------- */
 
 int main(int argc, char *argv[]){
   clock_t begin = clock();
@@ -62,7 +71,7 @@ int main(int argc, char *argv[]){
   int result_v3[] = {0,0,0};
   int expected_v3[] = {-2,1,0};
   vec_prod(vec4, vec5, result_v3);
-  check_if_equal_vec(expected_v3, result_v3, "Tests 7.0");
+  check_if_equal_vec(expected_v3, result_v3, "Test 7.0");
 
   clock_t end = clock();
   double time_elabsed = (double)(end - begin) / CLOCKS_PER_SEC;
