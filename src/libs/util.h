@@ -5,8 +5,9 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define ANSI_COLOR_RED     "\x1b[31m"
-#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_RED     "\x1b[41m"
+#define ANSI_COLOR_GREEN   "\x1b[42m"
+#define ANSI_COLOR_GREEN_F "\x1b[32m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
 // possible options for the user to select
