@@ -48,4 +48,11 @@ double angle_between(int v1[], int v2[]){
   return acos(s / bf) * 180.0 / PI;
 }
 
+void vec_prod(int v1[], int v2[], int result_vector[]){
+  result_vector[0] = v1[1] * v2[2] - v1[2] * v2[1];
+  result_vector[1] = v1[2] * v2[0] - v1[0] * v2[2];
+  result_vector[2] = v1[0] * v2[1] - v1[1] * v2[0];
+  return;
+}
+
 #endif

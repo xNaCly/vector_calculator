@@ -55,6 +55,15 @@ int main(int argc, char *argv[]){
   double a = angle_between(vec2, vec3);
   check_if_equal_double(125.264390, a, "Test 6.0");
 
+  if(VERBOSE)
+    print_test_header("Test 7 - Calculate the orthogonal vector of two vectors");
+  int vec4[] = {1,2,1};
+  int vec5[] = {2,4,1};
+  int result_v3[] = {0,0,0};
+  int expected_v3[] = {-2,1,0};
+  vec_prod(vec4, vec5, result_v3);
+  check_if_equal_vec(expected_v3, result_v3, "Tests 7.0");
+
   clock_t end = clock();
   double time_elabsed = (double)(end - begin) / CLOCKS_PER_SEC;
   print_results(time_elabsed);
