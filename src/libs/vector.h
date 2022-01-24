@@ -1,6 +1,8 @@
 #ifndef VECTOR_H_INCLUDED
 #define VECTOR_H_INCLUDED
 
+#define PI 3.14159265
+
 #include <math.h>
 
 double vec_length(int vec[]){
@@ -40,6 +42,10 @@ int scalar_prod(int v1[], int v2[]){
   return s;
 }
 
-
+double angle_between(int v1[], int v2[]){
+  double s = scalar_prod(v1, v2);
+  double bf = vec_length(v1) * vec_length(v2);
+  return acos(s / bf) * 180.0 / PI;
+}
 
 #endif

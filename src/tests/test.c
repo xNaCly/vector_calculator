@@ -10,14 +10,11 @@ int main(int argc, char *argv[]){
 
   if(VERBOSE)
     printf("Running tests...\n\n");
-
   int vec[] = {1,2,3};
 
   if(VERBOSE)
     print_test_header("Test 1 - Length of vectors:");
-
   double vlen = vec_length(vec);
-
   check_if_equal_double(3.7, vlen, "Test 1.0");
 
   if(VERBOSE)
@@ -32,7 +29,6 @@ int main(int argc, char *argv[]){
 
   if(VERBOSE)
     print_test_header("Test 3 - Subtraction of two vectors: ");
-
   int result_v1[] = {0,0,0};
   int expected_v1[] = {1,0,-1};
 
@@ -41,7 +37,6 @@ int main(int argc, char *argv[]){
 
   if(VERBOSE)
     print_test_header("Test 4 - Multiplication of a vector");
-
   int result_v2[] = {0,0,0};
   int fac = 2;
   int expected_v2[] = {2,4,6};
@@ -52,6 +47,13 @@ int main(int argc, char *argv[]){
     print_test_header("Test 5 - Calculate scalar product of two vectors");
   int sp = scalar_prod(vec, vec1);
   check_if_equal_int(12, sp, "Test 5.0");
+
+  if(VERBOSE)
+    print_test_header("Test 6 - Calculate the angle between two vectors");
+  int vec2[] = {2,2,1};
+  int vec3[] = {-1,-1,1};
+  double a = angle_between(vec2, vec3);
+  check_if_equal_double(125.264390, a, "Test 6.0");
 
   clock_t end = clock();
   double time_elabsed = (double)(end - begin) / CLOCKS_PER_SEC;
