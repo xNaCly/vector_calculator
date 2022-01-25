@@ -5,6 +5,10 @@
 #include <string.h>
 #include "_util.h"
 
+void print_test_help(void){
+  printf("Usage:\n  test --help | -h\n  test --silent | -s\n\nOptions:\n  -h --help\t Show this screen\n  -s --silent\t Minify Output\n");
+}
+
 void print_test_header(char text[]){
   printf("%s%s%s\n", ANSI_STYLE_BOLD, text, ANSI_RESET);
 }

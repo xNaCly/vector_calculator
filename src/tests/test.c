@@ -10,7 +10,7 @@ int main(int argc, char *argv[]){
     if(strcmp("--silent", argv[1]) == 0 || strcmp("-s", argv[1]) == 0) {
       VERBOSE = 0;
     } else if(strcmp("--help", argv[1]) == 0 || strcmp("-h", argv[1]) == 0){
-      printf("Usage:\n  test --help | -h\n  test --silent | -s\n\nOptions:\n  -h --help\t Show this screen\n  -s --silent\t Minify Output\n");
+      print_test_help();
       exit(0);
     }
   }

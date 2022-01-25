@@ -13,19 +13,8 @@ void throw_error(char text[], int code){
   exit(code < 255 ? code : 1);
 }
 
-void print_options(void){
-  printf("The following options are currently available: \n");
 
-  for(int i = 0; i < (int) (sizeof(OPTIONS)/sizeof(OPTIONS[0])); i++){
-    printf("\t[%d]: %s\n", i+1, OPTIONS[i]);
-  }
-
-  printf("Choose an option by providing the coresponding number: ");
-}
-
-/*
-gets the selection made by the user and returns the selection
-*/
+// gets the selection made by the user and returns the selection, checks if selection is available
 int get_selection(void){
   int selection = -1;
   scanf("%d", &selection);
@@ -39,8 +28,9 @@ int get_selection(void){
   return selection;
 }
 
-void print_help(void){
-  printf("Vector helper v0.1\nThis program has several helpful methods for working with vectors:\n");
+// prints the manual, consisting of the available method and its description
+void print_manual(void){
+  printf("Vector calculator %s:\n", VERSION);
 
   for(int i = 0; i < (int) (sizeof(OPTIONS)/sizeof(OPTIONS[0])); i++){
     printf("\t[%d]: %s%s%s%s\n\t\t%s%s%s\n\n",
@@ -54,7 +44,17 @@ void print_help(void){
       ANSI_RESET
       );
   }
+}
 
-  printf("source: https://github.com/xnacly/vector_calculator\n");
+void handle_arguments(int argc, char *argv[]){
+  if(argc > 1){
+    if(strcmp("--help", argv[1]) == 0 || strcmp("-h", argv[1]) == 0){
+      printf("Usage:\n  vec_calc --help | -h\n  vec_calc --version | -v\n\nOptions:\n  -h --help \t Show this screen\n  -v --version \t Show version\n");
+      exit(0);
+    } else if(strcmp("-v", argv[1]) == 0 || strcmp("-v", argv[1]) == 0){
+      printf("Current Version: %s\n", VERSION);
+      exit(0);
+    }
+   }
 }
 #endif
