@@ -1,12 +1,28 @@
-Vector helper v0.1
+Overview:
+Vec_calc is a simple, fast and powerful c program to ease the task of working with vectors.
+It provides the user with a powerful and extandable set of methods to manipulate and get certain results from vectors.
+These methods inner workings are tested and verified throughly by a custom made test suite.
 
-This program has several helpful methods for working with vectors:
-- calculate vector length: vec_length(vec)
-- calculate the scalar product: scalar_prd(vec, vec)
-- add two vectors together: vec_add(vec, vec)
-- multiply a vector with an int: vec_mult(vec, int)
-- subtract two vectors: vec_sub(vec, vec)
-- calculate the angle between two vectors: calc_angle(vec, vec)
-- calculate the orthogonal vector: vec_prod(vec, vec)
+Documentation:
+$ ./vec_calc.out -h
+  Usage:
+    vec_calc --help | -h
+    vec_calc --version | -v
 
-source: https://github.com/xnacly/vector_calculator
+  Options:
+    -h --help      Show this screen
+    -v --version   Show version
+
+tests.out:
+$ ./tests.out -h
+  Usage:
+    test --help | -h
+    test --silent | -s
+
+  Options:
+    -h --help      Show this screen
+    -s --silent    Minify Output
+
+Build:
+To build and run tests: make run_tests
+To build and run vec_calc: make main
