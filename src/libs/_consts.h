@@ -38,6 +38,4 @@
     "returns the angle between two vectors",
     "calculates the vector product, stored in result_vector"
   };
-
-
 #endif

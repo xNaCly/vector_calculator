@@ -11,7 +11,7 @@ void print_test_header(char text[]){
 
 void int_test_feedback(double x, double y, char text[], char status[]){
   printf("%s%s %s %s %s \n",
-    ANSI_COLOR_BLACK,
+    strcmp(status, "PASS") == 0 ? ANSI_COLOR_BLACK : ANSI_COLOR_WHITE,
     strcmp(status, "PASS") == 0 ? ANSI_COLOR_GREEN_BG : ANSI_COLOR_RED_BG,
     status,
     ANSI_RESET,
@@ -30,7 +30,7 @@ void int_test_feedback(double x, double y, char text[], char status[]){
 
 void vec_test_feedback(int vec[], int vec1[], char text[], char status[]){
   printf("%s%s %s %s %s \n",
-    ANSI_COLOR_BLACK,
+    strcmp(status, "PASS") == 0 ? ANSI_COLOR_BLACK : ANSI_COLOR_WHITE,
     strcmp(status, "PASS") == 0 ? ANSI_COLOR_GREEN_BG : ANSI_COLOR_RED_BG,
     status,
     ANSI_RESET,
