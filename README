@@ -13,7 +13,6 @@ $ ./vec_calc.out -h
     -h --help      Show this screen
     -v --version   Show version
 
-tests.out:
 $ ./tests.out -h
   Usage:
     test --help | -h
