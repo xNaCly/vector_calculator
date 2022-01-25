@@ -5,16 +5,21 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define ANSI_COLOR_RED     "\x1b[41m"
-#define ANSI_COLOR_GREEN   "\x1b[42m"
-#define ANSI_COLOR_GREEN_F "\x1b[32m"
-#define ANSI_COLOR_RESET   "\x1b[0m"
+#define ANSI_COLOR_RED      "\x1b[91m"
+#define ANSI_COLOR_GREEN    "\x1b[92m"
+#define ANSI_COLOR_RED_BG   "\x1b[101m"
+#define ANSI_COLOR_GREEN_BG "\x1b[102m"
+#define ANSI_COLOR_WHITE_BG "\x1b[40m"
+#define ANSI_STYLE_BOLD     "\x1b[1m"
+#define ANSI_STYLE_ITALIC   "\x1b[3m"
+#define ANSI_RESET          "\x1b[0m"
 
 // possible options for the user to select
-const char *OPTIONS[] = {"vec_length(vec)"};
+const char *OPTIONS[] = {"double vec_length(int vec[])"};
+const char *OPTIONS_DESC[] = {"returns the length of the given vector"};
 
 void throw_error(char text[], int code){
-  printf(ANSI_COLOR_RED "\n\nError (%d): %s\n" ANSI_COLOR_RESET, code, text);
+  printf(ANSI_COLOR_RED "\n\nError (%d): %s\n" ANSI_RESET, code, text);
   printf("Stopping the programm due to an Error. \n");
   exit(code < 255 ? code : 1);
 }
@@ -46,6 +51,12 @@ int get_selection(void){
 }
 
 void print_help(void){
-  printf("Vector helper v0.1\t\nThis program has several helpful methods for working with vectors:\n\t- calculate vector length: vec_length(vec)\n\t- calculate the scalar product: scalar_prd(vec, vec)\n\t- calculate the orthogonal vector: vec_prod(vec, vec)\n\t- calculate the angle between two vectors: calc_angle(vec, vec)\n\t- add two vectors together: vec_add(vec, vec)\n\t- subtract two vectors: vec_sub(vec, vec)\n\t- multiply a vector with an int: vec_mult(vec, int)\nsource: https://github.com/xnacly");
+  printf("Vector helper v0.1\t\nThis program has several helpful methods for working with vectors:\n\t");
+
+  for(int i = 0; i < (int) (sizeof(OPTIONS)/sizeof(OPTIONS[0])); i++){
+    printf("\t[%d]: %s%s%s -> %s\n", i+1, ANSI_COLOR_WHITE_BG, OPTIONS[i], ANSI_RESET, OPTIONS_DESC[i]);
+  }
+
+  printf("source: https://github.com/xnacly");
 }
 #endif

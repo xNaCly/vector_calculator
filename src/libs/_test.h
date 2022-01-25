@@ -10,30 +10,42 @@ int TESTS_FAILED = 0;
 int VERBOSE = 0;
 
 void print_test_header(char text[]){
-  printf("\x1b[1m%s\x1b[0m\n", text);
+  printf("%s%s%s\n", ANSI_STYLE_BOLD, text, ANSI_RESET);
 }
 
 void int_test_feedback(double x, double y, char text[], char status[]){
   printf("%s %s %s %s \n",
-    strcmp(status, "Passed") ? ANSI_COLOR_RED : ANSI_COLOR_GREEN,
+    strcmp(status, "Passed") ? ANSI_COLOR_RED_BG : ANSI_COLOR_GREEN_BG,
     status,
-    ANSI_COLOR_RESET,
+    ANSI_RESET,
     text);
 
   if(VERBOSE)
-    printf("\t \x1b[3mExpected:\x1b[0m %f\n\t \x1b[3mGot:\x1b[0m %f\n\n", x, y);
+    printf("%s\tExpected: %f%s\n\t%sGot:%f%s \n\n",
+      ANSI_STYLE_ITALIC,
+      x,
+      ANSI_RESET,
+      ANSI_STYLE_ITALIC,
+      y,
+      ANSI_RESET
+      );
 }
 
 void vec_test_feedback(int vec[], int vec1[], char text[], char status[]){
-  printf("%s %s %s %s \n", strcmp(status, "Passed") ? ANSI_COLOR_RED : ANSI_COLOR_GREEN, status, ANSI_COLOR_RESET, text);
+  printf("%s %s %s %s \n", strcmp(status, "Passed") ? ANSI_COLOR_RED_BG : ANSI_COLOR_GREEN_BG, status, ANSI_RESET, text);
   if(VERBOSE)
-  printf("\t \x1b[3mExpected:\x1b[0m {%d, %d, %d}\n\t \x1b[3mGot:\x1b[0m {%d, %d, %d}\n\n",
+  printf("\t%sExpected: {%d, %d, %d}%s\n\t%sGot: {%d, %d, %d}%s\n\n",
+    ANSI_STYLE_ITALIC,
     vec[0],
     vec[1],
     vec[2],
+    ANSI_RESET,
+    ANSI_STYLE_ITALIC,
     vec1[0],
     vec1[1],
-    vec1[2]);
+    vec1[2],
+    ANSI_RESET
+    );
 }
 
 void check_if_equal_double(double value1, double value2, char text[]){
@@ -72,9 +84,9 @@ void check_if_equal_vec(int vec[], int vec1[], char text[]){
 
 void print_results(double time_elabsed){
     printf("\nTests: %s%d passed%s, %d of %d total\nTime: %.5fsec\n",
-      ANSI_COLOR_GREEN_F,
+      ANSI_COLOR_GREEN,
       TESTS_PASSED,
-      ANSI_COLOR_RESET,
+      ANSI_RESET,
       TESTS_PASSED,
       TESTS_PASSED+TESTS_FAILED,
       time_elabsed);
