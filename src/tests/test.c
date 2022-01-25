@@ -1,7 +1,7 @@
 #include "../libs/_vector.h"
 #include "../libs/_test.h"
-#include <string.h>
-#include <time.h>
+#include <string.h> // used for strcmp
+#include <time.h> // used for clock() & CLOCKS_PER_SEC
 
 int main(int argc, char *argv[]){
   clock_t begin = clock();
@@ -59,7 +59,7 @@ int main(int argc, char *argv[]){
   int vec4[] = {1,2,1};
   int vec5[] = {2,4,1};
   int result_v3[] = {0,0,0};
-  int expected_v3[] = {-2,1,0};
+  int expected_v3[] = {-5,1,0};
   vec_prod(vec4, vec5, result_v3);
   check_if_equal_vec(expected_v3, result_v3, "Test 7.0");
 
