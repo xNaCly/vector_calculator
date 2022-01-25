@@ -1,11 +1,21 @@
-#include "../libs/_vector.h"
-#include "../libs/_test.h"
-#include <string.h> // used for strcmp
 #include <time.h> // used for clock() & CLOCKS_PER_SEC
+#include <string.h> // used for strcmp
+
+#include "../libs/_vector.h"
+#include "../libs/_consts.h"
+#include "../libs/_test.h"
 
 int main(int argc, char *argv[]){
+  if(argc > 1){
+    if(strcmp("--silent", argv[1]) == 0 || strcmp("-s", argv[1]) == 0) {
+      VERBOSE = 0;
+    } else if(strcmp("--help", argv[1]) == 0 || strcmp("-h", argv[1]) == 0){
+      printf("Usage:\n  test --help | -h\n  test --silent | -s\n\nOptions:\n  -h --help\t Show this screen\n  -s --silent\t Minify Output\n");
+      exit(0);
+    }
+  }
   clock_t begin = clock();
-  VERBOSE = argc > 1 ? !(strcmp("--silent", argv[1]) || strcmp("-s", argv[1])) : 1;
+
 
   if(VERBOSE)
     printf("Running tests...\n\n");
