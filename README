@@ -1,6 +1,6 @@
 Overview:
 Vec_calc is a simple, fast and powerful c program to ease the task of working with vectors.
-It provides the user with a powerful and extandable set of methods to manipulate and get certain results from vectors.
+It provides the user with a powerful and extendable set of methods to manipulate and get certain results from vectors.
 These methods inner workings are tested and verified throughly by a custom made test suite.
 
 Documentation:
