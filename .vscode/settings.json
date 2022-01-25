@@ -9,6 +9,7 @@
 		"math.h": "c",
 		"_util.h": "c",
 		"_vector.h": "c",
-		"_test.h": "c"
+		"_test.h": "c",
+		"stdlib.h": "c"
 	}
 }
