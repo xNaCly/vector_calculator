@@ -5,6 +5,7 @@
   int TESTS_FAILED = 0;
   int VERBOSE = 1;
 
+  #define VERSION "0.1"
 
   #define ANSI_COLOR_RED      "\x1b[91m"
   #define ANSI_COLOR_GREEN    "\x1b[92m"
