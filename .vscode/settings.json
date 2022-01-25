@@ -6,6 +6,9 @@
 		"cstdlib": "c",
 		"vector.h": "c",
 		"test.h": "c",
-		"math.h": "c"
+		"math.h": "c",
+		"_util.h": "c",
+		"_vector.h": "c",
+		"_test.h": "c"
 	}
 }
