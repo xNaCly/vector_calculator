@@ -22,7 +22,7 @@ void throw_error(char text[], int code){
 void print_options(void){
   printf("The following options are currently available: \n");
 
-  for(int i = 0; i < sizeof(OPTIONS)/sizeof(OPTIONS[0]); i++){
+  for(int i = 0; i < (int) (sizeof(OPTIONS)/sizeof(OPTIONS[0])); i++){
     printf("\t[%d]: %s\n", i+1, OPTIONS[i]);
   }
 
@@ -36,7 +36,7 @@ int get_selection(void){
   int selection = -1;
   scanf("%d", &selection);
 
-  if(selection == -1 || selection < 1 || selection > sizeof(OPTIONS)/sizeof(OPTIONS[0])){
+  if(selection == -1 || selection < 1 || selection > (int) (sizeof(OPTIONS)/sizeof(OPTIONS[0]))){
     // throw_error("Given Index does not match any available selection, please try again.");
     printf("selection with index: %d not found, try again. \n", selection);
     get_selection();

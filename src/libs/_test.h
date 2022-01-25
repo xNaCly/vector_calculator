@@ -10,7 +10,7 @@ int TESTS_FAILED = 0;
 int VERBOSE = 0;
 
 void print_test_header(char text[]){
-  printf("\e[1m%s\e[0m\n", text);
+  printf("\x1b[1m%s\x1b[0m\n", text);
 }
 
 void int_test_feedback(double x, double y, char text[], char status[]){
@@ -21,13 +21,13 @@ void int_test_feedback(double x, double y, char text[], char status[]){
     text);
 
   if(VERBOSE)
-    printf("\t \e[3mExpected:\e[0m %f\n\t \e[3mGot:\e[0m %f\n\n", x, y);
+    printf("\t \x1b[3mExpected:\x1b[0m %f\n\t \x1b[3mGot:\x1b[0m %f\n\n", x, y);
 }
 
 void vec_test_feedback(int vec[], int vec1[], char text[], char status[]){
   printf("%s %s %s %s \n", strcmp(status, "Passed") ? ANSI_COLOR_RED : ANSI_COLOR_GREEN, status, ANSI_COLOR_RESET, text);
   if(VERBOSE)
-  printf("\t \e[3mExpected:\e[0m {%d, %d, %d}\n\t \e[3mGot:\e[0m {%d, %d, %d}\n\n",
+  printf("\t \x1b[3mExpected:\x1b[0m {%d, %d, %d}\n\t \x1b[3mGot:\x1b[0m {%d, %d, %d}\n\n",
     vec[0],
     vec[1],
     vec[2],
