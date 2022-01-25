@@ -19,7 +19,6 @@
 #define ANSI_STYLE_ITALIC "\x1b[3m"
 #define ANSI_RESET "\x1b[0m"
 
-// options for the user to select
 extern const char *OPTIONS[];
 extern const char *OPTIONS_DESC[];
 
