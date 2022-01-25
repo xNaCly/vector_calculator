@@ -7,7 +7,6 @@ This program has several helpful methods for working with vectors:
 - multiply a vector with an int: vec_mult(vec, int)
 - subtract two vectors: vec_sub(vec, vec)
 - calculate the angle between two vectors: calc_angle(vec, vec)
-
 - calculate the orthogonal vector: vec_prod(vec, vec)
 
 source: https://github.com/xnacly/vector_calculator
