@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
   int result_v2[] = {0, 0, 0};
   int fac = 2;
   int expected_v2[] = {2, 4, 6};
-  vec_mult(vec, fac, result_v2);
+  vec_fac(vec, fac, result_v2);
   check_if_equal_vec(expected_v2, result_v2, "Test 4.0");
 
   if (VERBOSE)
