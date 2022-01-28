@@ -28,7 +28,7 @@ void vec_sub(int v[], int v1[], int result_vector[])
   return;
 }
 
-void vec_mult(int v[], int factor, int result_vector[])
+void vec_fac(int v[], int factor, int result_vector[])
 {
   for (int i = 0; i < 3; i++)
   {
@@ -60,4 +60,13 @@ void vec_prod(int v[], int v1[], int result_vector[])
   result_vector[1] = v[2] * v1[0] - v[0] * v1[2];
   result_vector[2] = v[0] * v1[1] - v[1] * v1[0];
   return;
+}
+
+// TODO: work in progress (depends on scalar_prod)
+int triple_prod(int v[], int v1[], int v2[])
+{
+  int _v[] = {0, 0, 0};
+  vec_prod(v, v1, _v);
+
+  return 0;
 }
