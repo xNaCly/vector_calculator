@@ -23,8 +23,20 @@ extern const char *OPTIONS[];
 extern const char *OPTIONS_DESC[];
 
 void throw_error(char text[], int code);
+
+// gets the selection made by the user and returns the selection, checks if selection is available
 int get_selection(void);
+
+// prints the manual, consisting of the available method and its description
 void print_manual(void);
+
+// parses arguments and returns contents based on them
 void handle_arguments(int argc, char *argv[]);
+
+// handles argument parser call
+void init_main(int argc, char *argv[]);
+
+// printing of the manual + a prompt
+void helper_init_main(void);
 
 #endif

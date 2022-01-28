@@ -1,22 +1,24 @@
 #include "_util.h"
 
 const char *OPTIONS[] = {
-    "double vec_length(int v[])",
-    "void vec_add(int v[], int v1[], int result_vector[])",
-    "void vec_sub(int v[], int v1[], int result_vector[])",
-    "void vec_mult(int v[], int factor, int result_vector[])",
-    "int scalar_prod(int v[], int v1[])",
-    "double angle_between(int v[], int v1[])",
-    "void vec_prod(int v[], int v1[], int result_vector[])"};
+    "vec_length(int v[])",
+    "vec_add(int v[], int v1[], int result_vector[])",
+    "vec_sub(int v[], int v1[], int result_vector[])",
+    "vec_fac(int v[], int factor, int result_vector[])",
+    "scalar_prod(int v[], int v1[])",
+    "angle_between(int v[], int v1[])",
+    "vec_prod(int v[], int v1[], int result_vector[])",
+    "exit"};
 
 const char *OPTIONS_DESC[] = {
     "returns len of the given vector",
     "adds two vectors, stored in result_vector",
     "subtracts two vectors, stored in result_vector",
-    "multiplies a vector, stored in result_vector",
+    "multiplies a vector with an int, stored in result_vector",
     "returns the scalar product of two vectors",
     "returns the angle between two vectors",
-    "calculates the vector product, stored in result_vector"};
+    "calculates the vector product, stored in result_vector",
+    "closes the program"};
 
 void throw_error(char text[], int code)
 {
@@ -25,7 +27,6 @@ void throw_error(char text[], int code)
   exit(code < 255 ? code : 1);
 }
 
-// gets the selection made by the user and returns the selection, checks if selection is available
 int get_selection(void)
 {
   int selection = -1;
@@ -34,21 +35,19 @@ int get_selection(void)
   if (selection == -1 || selection < 1 || selection > (int)(sizeof(OPTIONS) / sizeof(OPTIONS[0])))
   {
     // throw_error("Given Index does not match any available selection, please try again.");
-    printf("selection with index: %d not found, try again. \n", selection);
-    get_selection();
+    throw_error("selection with given index not found, try again. \n", 1);
   }
 
   return selection;
 }
 
-// prints the manual, consisting of the available method and its description
 void print_manual(void)
 {
   printf("Vector calculator %s:\n", VERSION);
 
   for (int i = 0; i < (int)(sizeof(OPTIONS) / sizeof(OPTIONS[0])); i++)
   {
-    printf("\t[%d]: %s%s%s%s\n\t\t%s%s%s\n\n",
+    printf("[%d]: %s%s%s%s\n %s%s%s\n",
            i + 1,
            ANSI_STYLE_BOLD,
            ANSI_COLOR_WHITE,
@@ -75,4 +74,16 @@ void handle_arguments(int argc, char *argv[])
       exit(0);
     }
   }
+}
+
+void init_main(int argc, char *argv[])
+{
+  handle_arguments(argc, argv);
+  helper_init_main();
+}
+
+void helper_init_main(void)
+{
+  print_manual();
+  printf("Choose an option by providing the coresponding number: ");
 }
