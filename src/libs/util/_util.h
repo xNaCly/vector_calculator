@@ -22,6 +22,7 @@
 extern const char *OPTIONS[];
 extern const char *OPTIONS_DESC[];
 
+// prints error, exits with given code
 void throw_error(char text[], int code);
 
 // gets the selection made by the user and returns the selection, checks if selection is available
