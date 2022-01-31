@@ -13,7 +13,7 @@ void selection_handler(int sel)
     scanf("%d,%d,%d", &vec[0], &vec[1], &vec[2]);
 
     double l = vec_length(vec);
-    printf("Length of the vector: %f\n\n", l);
+    printf("%sLength of the vector: %f%s\n\n", ANSI_COLOR_GREY_BG,l, ANSI_RESET);
   }
   else if (sel == 2)
   {
@@ -28,7 +28,7 @@ void selection_handler(int sel)
 
     vec_add(vec, vec1, rvec);
 
-    printf("Resulting Vector: {%d,%d,%d}\n\n", rvec[0], rvec[1], rvec[2]);
+    printf("%sResulting Vector: {%d,%d,%d}%s\n\n", ANSI_COLOR_GREY_BG,rvec[0], rvec[1], rvec[2], ANSI_RESET);
   }
   else if (sel == 3)
   {
@@ -43,14 +43,14 @@ void selection_handler(int sel)
 
     vec_sub(vec, vec1, rvec);
 
-    printf("Resulting Vector: {%d,%d,%d}\n\n", rvec[0], rvec[1], rvec[2]);
+    printf("%sResulting Vector: {%d,%d,%d}%s\n\n", ANSI_COLOR_GREY_BG,rvec[0], rvec[1], rvec[2], ANSI_RESET);
   }
   else if (sel == 8)
   {
     exit(0);
   }
 
-  // creates endless loop
+  // creates endless selection loop for the user
   helper_init_main();
   int _sel = get_selection();
 
