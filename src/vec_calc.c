@@ -1,5 +1,3 @@
-#include "string.h" // strcmp()
-
 #include "libs/util/_util.h"
 #include "libs/vector/_vector.h"
 
